@@ -126,7 +126,7 @@ body {
 <div class="envelope" onclick="pedirSenha()">
   <div class="carta">
     <div class="polaroid">
-      <img src="foto.jpg">
+      <img src="foto.jpg" alt="Foto da carta">
     </div>
     <div class="texto">
 Foi muito bom te conhecer. De verdade.  
@@ -155,12 +155,13 @@ E se for pra começar algo bonito, que seja assim: leve, verdadeiro e com vontad
 
 <script>
 function pedirSenha() {
-  if(document.querySelector('.envelope').classList.contains('aberto')) return;
+  const envelope = document.querySelector('.envelope');
+  if(envelope.classList.contains('aberto')) return;
 
   const senha = prompt("Senha para abrir 💌");
 
-  if(senha === "bebe") {
-    document.querySelector('.envelope').classList.add('aberto');
+  if(senha && senha.toLowerCase() === "bebe") {
+    envelope.classList.add('aberto');
   } else {
     alert("Senha errada 😅");
   }
