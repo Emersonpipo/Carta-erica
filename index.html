@@ -2,174 +2,160 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Carta 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carta</title>
 
 <style>
 body {
-  background:#f0f0f0;
-  font-family: Georgia, serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  margin:0;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color: #f5f5f5;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  transition: background 2s ease;
 }
 
-/* ENVELOPE */
-.envelope {
-  width:320px;
-  height:220px;
-  background:#c0392b;
-  position:relative;
-  cursor:pointer;
-  border-radius:6px;
+body.dark {
+  background: radial-gradient(circle at center, #000, #000);
 }
 
-/* TAMPA */
-.envelope::before {
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:0;
-  height:0;
-  border-left:160px solid transparent;
-  border-right:160px solid transparent;
-  border-top:110px solid #e74c3c;
-  transform-origin:top;
-  transition:0.6s;
+.container {
+  max-width: 420px;
+  padding: 30px 20px 60px;
+  line-height: 1.8;
+  animation: fadeIn 2s ease, respirar 12s ease-in-out infinite;
 }
 
-.envelope.aberto::before {
-  transform:rotateX(180deg);
+h1 {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 30px;
 }
 
-/* CARTA */
-.carta {
-  position:absolute;
-  top:20px;
-  left:10px;
-  width:300px;
-  background:#fff;
-  padding:15px;
-  border-radius:6px;
-  box-shadow:0 5px 15px rgba(0,0,0,.3);
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.6s;
+p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
 }
 
-.envelope.aberto .carta {
-  opacity:1;
-  transform:translateY(0);
+.final {
+  margin-top: 40px;
+  text-align: center;
 }
 
-/* POLAROID */
-.polaroid {
-  background:#fff;
-  padding:8px;
-  box-shadow:0 4px 10px rgba(0,0,0,.2);
-  margin-bottom:10px;
+button {
+  margin-top: 25px;
+  padding: 14px 26px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #e63946;
+  color: white;
+  cursor: pointer;
+  animation: pulse 2s infinite;
 }
 
-.polaroid img {
-  width:100%;
+button:active {
+  transform: scale(0.97);
 }
 
-/* TEXTO */
-.texto {
-  font-size:14px;
-  line-height:1.5;
-  margin-bottom:10px;
-  white-space: pre-line;
+.reveal {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.3rem;
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 
-/* BOTÃO PLAY */
-.play-btn {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#000;
-  color:#fff;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  cursor:pointer;
-  z-index:999;
+.show {
+  opacity: 1;
 }
 
-/* PLAYER */
-.player {
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  width:280px;
-  height:158px;
-  display:none;
-  box-shadow:0 10px 20px rgba(0,0,0,.4);
+iframe {
+  display: none;
 }
 
-.player iframe {
-  width:100%;
-  height:100%;
-  border-radius:10px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(230,57,70,0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(230,57,70,0); }
+  100% { box-shadow: 0 0 0 0 rgba(230,57,70,0); }
+}
+
+@keyframes respirar {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.015); }
+  100% { transform: scale(1); }
 }
 </style>
 </head>
 
 <body>
 
-<div class="envelope" onclick="pedirSenha()">
-  <div class="carta">
-    <div class="polaroid">
-      <img src="foto.jpg" alt="Foto da carta">
-    </div>
-    <div class="texto">
-Foi muito bom te conhecer. De verdade.  
-Desde que você apareceu, meus dias ganharam outro ritmo, mais leves, mais alegres, com aquele sorriso que surge sem aviso.  
+<div class="container">
+  <h1>Para você, bebê</h1>
 
-Mesmo à distância, você conseguiu ocupar um espaço bonito em mim — daqueles que aquecem, que fazem querer cuidar, que dão vontade de estar perto.  
+  <p>
+    É curioso como algumas pessoas chegam sem fazer barulho
+    e, de repente, deixam tudo diferente.
+  </p>
 
-Que 2026 seja o ano em que a gente transforme tudo isso em presença, em toque, em risadas sem tela no meio. Que a gente se encontre, sem pressa, e faça tudo aquilo que já está com vontade, do jeito mais simples e sincero possível.  
+  <p>
+    Conhecer você fez exatamente isso comigo.  
+    Meus dias ficaram mais leves, mais alegres, mais vivos.
+    Tem algo em você que traz calma e, ao mesmo tempo,
+    desperta vontade de ir além.
+  </p>
 
-Se isso já é bom assim, imagina quando for de verdade.  
+  <p>
+    Mesmo à distância, você conseguiu se fazer presente
+    de um jeito raro. E eu gosto disso. Gosto da gente,
+    das conversas sem pressa, das risadas soltas
+    e de tudo aquilo que ainda nem aconteceu.
+  </p>
 
-E se for pra começar algo bonito, que seja assim: leve, verdadeiro e com vontade de continuar.
-    </div>
+  <p>
+    Que 2026 seja o ano em que a gente transforme
+    vontade em encontro, palavras em abraços,
+    e expectativa em realidade.
+    Que seja o ano de viver tudo aquilo
+    que já existe no coração.
+  </p>
+
+  <div class="final">
+    <p>Se você chegou até aqui…</p>
+    <button onclick="revelar()">toque aqui</button>
   </div>
-</div>
 
-<div class="play-btn" onclick="togglePlayer()">▶</div>
+  <div id="mensagemFinal" class="reveal">
+    <p>Eu quero descobrir tudo isso com você.</p>
+    <p style="margin-top:20px;">— Emerson</p>
+  </div>
 
-<div class="player" id="player">
-  <iframe 
-    src="https://www.youtube.com/embed/450p7goxZqg?autoplay=1"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
+  <!-- Música Alex Warren -->
+  <iframe
+    id="musica"
+    width="0"
+    height="0"
+    src=""
+    allow="autoplay">
   </iframe>
+
 </div>
 
 <script>
-function pedirSenha() {
-  const envelope = document.querySelector('.envelope');
-  if(envelope.classList.contains('aberto')) return;
+function revelar() {
+  document.getElementById("mensagemFinal").classList.add("show");
+  document.getElementById("musica").src =
+    "https://www.youtube.com/embed/4k3n2P3Zp2k?autoplay=1";
 
-  const senha = prompt("Senha para abrir 💌");
-
-  if(senha && senha.toLowerCase() === "bebe") {
-    envelope.classList.add('aberto');
-  } else {
-    alert("Senha errada 😅");
-  }
-}
-
-function togglePlayer() {
-  const p = document.getElementById("player");
-  p.style.display = p.style.display === "block" ? "none" : "block";
+  document.body.classList.add("dark");
 }
 </script>
 
