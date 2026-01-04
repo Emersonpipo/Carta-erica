@@ -3,178 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Carta</title>
 
 <style>
 body {
   margin: 0;
-  padding: 0;
   background: #d6cfc4;
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-/* SENHA */
-#senhaBox {
-  background: #f8f4ec;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  text-align: center;
-  max-width: 320px;
-  width: 100%;
+#senhaBox, #carta {
+  background: #fdfaf4;
+  padding: 32px;
+  max-width: 430px;
+  width: 90%;
+  box-shadow: 0 18px 45px rgba(0,0,0,.3);
 }
 
-input {
-  padding: 12px;
-  font-size: 1rem;
+#carta {
+  display: none;
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+input, button {
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 14px;
+  margin-top: 16px;
+  font-size: 1rem;
 }
 
 button {
-  margin-top: 15px;
-  padding: 12px 26px;
-  border: none;
   background: #8b5e3c;
-  color: white;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-button:active {
-  transform: scale(0.97);
-}
-
-/* CARTA */
-#carta {
-  display: none;
-  background: #fdfaf4;
-  max-width: 420px;
-  width: 100%;
-  padding: 35px 25px 60px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  line-height: 1.8;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
 }
 
 h1 {
   text-align: center;
   font-weight: normal;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-/* FOTO */
 .foto {
   display: flex;
   justify-content: center;
-  margin: 25px 0;
+  margin: 28px 0;
 }
 
 .foto img {
-  width: 190px;
-  height: 190px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 6px;
   border: 6px solid #fdfaf4;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
 }
 
 p {
-  margin-bottom: 20px;
+  line-height: 1.85;
   font-size: 1.05rem;
 }
 
 .final {
   text-align: center;
-  margin-top: 40px;
-}
-
-.reveal {
-  display: none;
-  text-align: center;
-  margin-top: 40px;
-  font-size: 1.2rem;
+  margin-top: 45px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- SENHA -->
 <div id="senhaBox">
   <p>Digite a senha para abrir a carta</p>
   <input type="password" id="senha" placeholder="senha">
-  <button onclick="abrirCarta()">abrir</button>
+  <button onclick="abrirCarta()">Abrir</button>
 </div>
 
-<!-- CARTA -->
 <div id="carta">
   <h1>Para você, bebê</h1>
 
   <div class="foto">
-    <img src="foto_nova.jpg" alt="Foto dela">
+    <img src="foto2.jpg" alt="Foto dela">
   </div>
 
   <p>
-    É curioso como algumas pessoas chegam sem fazer barulho
-    e, de repente, deixam tudo diferente.
+    Conhecer você foi um presente inesperado que chegou do nada e ficou.
+    Desde então, meus dias ficaram mais leves, mais animados e cheios daquela
+    expectativa boa que faz a gente sorrir sem perceber.
   </p>
 
   <p>
-    Conhecer você fez meus dias ficarem mais leves,
-    mais alegres, mais vivos.
-    Tem algo em você que traz calma
-    e, ao mesmo tempo, vontade de ir além.
+    Mesmo com a distância, você conseguiu se fazer presente de um jeito raro.
+    Conversas que fluem, risadas que aparecem fácil e uma vontade crescente
+    de transformar tudo isso em algo ainda mais real.
   </p>
 
   <p>
-    Mesmo à distância, você conseguiu se fazer presente
-    de um jeito raro.
-    Gosto da gente, das conversas sem pressa,
-    das risadas soltas
-    e de tudo aquilo que ainda nem aconteceu.
-  </p>
-
-  <p>
-    Que 2026 seja o ano em que a gente transforme
-    vontade em encontro,
-    palavras em abraço
-    e expectativa em realidade.
+    Que 2026 seja o ano em que a gente finalmente se encontra,
+    faz tudo aquilo que já está guardado na vontade
+    e descobre, lado a lado, o quanto isso pode ser ainda melhor.
   </p>
 
   <div class="final">
-    <p>Quando terminar de ler…</p>
-    <button onclick="revelar()">toque aqui</button>
-  </div>
+    <p>Quando terminar de ler, clique abaixo:</p>
 
-  <div id="finalMsg" class="reveal">
-    <p>Eu quero descobrir tudo isso com você.</p>
-    <p style="margin-top:15px;">— Emerson</p>
+    <a
+      href="https://www.youtube.com/watch?v=V4kq2fPibzE"
+      target="_blank"
+      style="
+        display:inline-block;
+        padding:14px 34px;
+        background:#8b5e3c;
+        color:#fff;
+        border-radius:30px;
+        text-decoration:none;
+        font-size:1.05rem;
+      "
+    >
+      🎵 Ouvir a música
+    </a>
+
+    <p style="margin-top:22px;">— Emerson</p>
   </div>
 </div>
 
 <script>
 function abrirCarta() {
-  if (document.getElementById("senha").value === "bebe") {
+  const senha = document.getElementById("senha").value;
+  if (senha === "bebe") {
     document.getElementById("senhaBox").style.display = "none";
     document.getElementById("carta").style.display = "block";
   } else {
     alert("Senha incorreta");
   }
-}
-
-function revelar() {
-  document.getElementById("finalMsg").style.display = "block";
-  window.open(
-    "https://www.youtube.com/watch?v=4k3n2P3Zp2k",
-    "_blank"
-  );
 }
 </script>
 
